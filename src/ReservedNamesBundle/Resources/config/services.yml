@@ -1,0 +1,19 @@
+services:
+    alister_reserved_names.cleanusername:
+        # must implement Alister\ReservedNamesBundle\Services\CleanUserNamesInterface
+        class: Alister\ReservedNamesBundle\Services\CleanUserNames
+
+    alister_reserved_names.check:
+        # must implement Alister\ReservedNamesBundle\Services\ReservedNamesInterface
+        class: Alister\ReservedNamesBundle\Services\ReservedNames
+        arguments:
+            - %alister_reserved_names.names%
+            - @alister_reserved_names.cleanusername
+
+    # alister_reserved_names.validateusername:
+    #     class: Alister\ReservedNamesBundle\Services\ReservedNames
+
+# , "plain_value", %parameter%
+
+# services for CleanUsername & ValidateUsername, 
+# which default to our own, but can be overridden

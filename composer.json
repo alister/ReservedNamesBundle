@@ -1,5 +1,5 @@
 {
-    "name": "alister/reserved-names",
+    "name": "alister/reserved-names-bundle",
     "description": "This bundle checks against a list of reserved names",
     "keywords": [],
     "type": "symfony-bundle",
@@ -20,7 +20,6 @@
     "autoload": {
         "psr-4": { "Alister\\ReservedNamesBundle\\": "src/ReservedNamesBundle" }
     },
-    "target-dir": "Alister/ReservedNamesBundle",
     "minimum-stability": "stable",
     "extra": {
         "branch-alias": {

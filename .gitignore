@@ -1,10 +1,11 @@
 composer.lock
 
-# buil artifacts
+# build artifacts
 
 cache.properties
 build/
 vendor/
+composer.phar
 
 # backups
 *~

@@ -3,7 +3,9 @@ all: lint test
 lint:
 	ant php-lint-ci
 
-test:
+test: security full-ant
+
+full-ant:
 	ant
 
 phpcs:
@@ -18,3 +20,6 @@ composer-update:
 
 tidy:
 	find . -type d -name 'vendor' -prune -o  \( -perm /ugo=x -iname '*.md' -o -iname '*php' \) -print | xargs chmod -x
+
+security:
+	vendor/bin/security-checker   security:check

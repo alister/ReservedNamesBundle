@@ -1,0 +1,9 @@
+# See also
+# * http://blog.postbit.com/reserved-username-list.html
+# * https://gist.github.com/caseyohara/1453705
+# * https://www.google.com/search?q=suggested+reserved+names
+# we will be adding to this list.... (in a config.yml file?)
+
+alister_reserved_names:
+    names:
+        
