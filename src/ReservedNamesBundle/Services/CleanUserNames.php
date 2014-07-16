@@ -29,7 +29,7 @@ class CleanUserNames implements CleanUserNamesInterface
 
         // now only return a string only up to the first number/-_ char
         $lenOfAlts = strcspn($username, '0123456789_-');
-        if ($lenOfAlts > 1 and strlen($username) > $lenOfAlts) {
+        if ($lenOfAlts > 1 && strlen($username) > $lenOfAlts) {
             $username = substr($username, 0, $lenOfAlts);
         }
         return $username;

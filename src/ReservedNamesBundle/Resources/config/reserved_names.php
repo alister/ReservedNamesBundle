@@ -1,12 +1,12 @@
 <?php
-// @TODO add lots more....
 // pre-reserved names
+
+// we can probably add lots more....
 // See also
 // * http://blog.postbit.com/reserved-username-list.html
 // * https://gist.github.com/caseyohara/1453705
 // * https://www.google.com/search?q=suggested+reserved+names
-// we will be adding to this list.... (in a config.yml file?)
- 
+
 return array(
 
     // misc names / Generic reserved words
