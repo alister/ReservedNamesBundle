@@ -58,39 +58,42 @@ class ReservedNamesServiceTest extends KernelTestCase
 
     public function testCheckingAgainstReservedName()
     {
-        $this->assertTrue($this->rn->isReserved('website'), 'website was not reserved');
-        $this->assertTrue($this->rn->isReserved('private'), 'private was not reserved');
+        $this->assertTrue($this->rn->isReserved('alister'), 'alister should be reserved');
+        $this->assertTrue($this->rn->isReserved('website'), 'website should be reserved');
+        $this->assertTrue($this->rn->isReserved('private'), 'private should be reserved');
+        $this->assertTrue($this->rn->isReserved('alister123'), 'alister123 should be reserved');
 
-        $this->assertTrue($this->rn->isReserved('alister123'), 'alister123 was not reserved');
-        $this->assertFalse($this->rn->isReserved('notinthelist'), 'notinthelist was marked as reserved');
+        $this->assertFalse($this->rn->isReserved('notinthelist'), 'notinthelist should not be reserved');
     }
 
-    public function testCleanedNameIsDifferentBytStillNotReserved()
+    public function testCleanedNameIsDifferentButStillNotReserved()
     {
+        $this->assertFalse($this->rn->isReserved('notreserved'));
         $this->assertFalse($this->rn->isReserved('notreserved123'));
     }
 
     public function testReservedNameIsPrefixedWithtest()
     {
-        $isThis = 'isthisreserved';  // not reserved, or a test
-        $this->assertFalse($this->rn->isReserved($isThis));
-        $this->assertFalse($this->rn->isTest($isThis));
+        $name = 'isthisreserved';  // not reserved, or a test
+        $this->assertFalse($this->rn->isReserved($name));
+        $this->assertFalse($this->rn->isTest($name));
 
+        $name = "test" . $name;
         // is a test and so is reserved
-        $this->assertTrue($this->rn->isTest('test' . $isThis));
-        $this->assertTrue($this->rn->isReserved('test' . $isThis));
-
+        $this->assertTrue($this->rn->isTest($name));
+        $this->assertTrue($this->rn->isReserved($name));
     }
 
     public function testCheckingAgainstTest()
     {
-        $this->assertTrue($this->rn->isTest('test123123'));
         $this->assertTrue($this->rn->isTest('test'));
+        $this->assertTrue($this->rn->isTest('test123123'));
 
         $this->assertFalse($this->rn->isTest('alister'));
         $this->assertFalse($this->rn->isTest('alister123'));
         $this->assertFalse($this->rn->isTest('alister123'));
-
         $this->assertFalse($this->rn->isTest('ali123ster'));
+
+        $this->assertTrue($this->rn->isTest('testali123ster'));
     }
 }
