@@ -1,0 +1,11 @@
+composer.lock
+
+# buil artifacts
+
+cache.properties
+build/
+vendor/
+
+# backups
+*~
+*.bak

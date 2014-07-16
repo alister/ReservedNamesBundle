@@ -1,0 +1,30 @@
+{
+    "name": "alister/reserved-names",
+    "description": "This bundle checks against a list of reserved names",
+    "keywords": [],
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alister Bulman",
+            "email": "abulman@gmail.com"
+        }
+    ],
+    "require": {
+        "symfony/framework-bundle": "~2.2",
+        "symfony/console": "~2.0"
+    },
+    "require-dev": {
+        "ibuildings/qa-tools": "~1.1"
+    },
+    "autoload": {
+        "psr-4": { "Alister\\ReservedNamesBundle\\": "src/ReservedNamesBundle" }
+    },
+    "target-dir": "Alister/ReservedNamesBundle",
+    "minimum-stability": "stable",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.7.x-dev"
+        }
+    }
+}
