@@ -11,7 +11,8 @@
         }
     ],
     "require": {
-        "symfony/framework-bundle": "~2.2",
+        "symfony/framework-bundle": "~2.3",
+        "sensio/framework-extra-bundle": "~2.3",
         "symfony/console": "~2.0"
     },
     "require-dev": {

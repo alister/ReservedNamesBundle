@@ -10,5 +10,4 @@ if (!class_exists('PHPUnit_Framework_TestCase') ||
 }
 
 $loader = require __DIR__ . '/../vendor/autoload.php';
-
-$loader->add('Alister\\ReservedNamesBundle', __DIR__);
+$loader->add('Alister\\ReservedNamesBundle', '../src/ReservedNamesBundle');

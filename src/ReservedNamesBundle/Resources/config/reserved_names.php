@@ -6,8 +6,9 @@
 // * https://gist.github.com/caseyohara/1453705
 // * https://www.google.com/search?q=suggested+reserved+names
 // we will be adding to this list.... (in a config.yml file?)
-
+ 
 return array(
+
     // misc names / Generic reserved words
     'about'             => 1,
     'access'            => 1,
@@ -885,6 +886,10 @@ return array(
     'zimbra'     => 1,
 
     // people
-    'fabpot' => 1,
-    'nutch'  => 1,
+    'billgates'    => 1,
+    'fabpot'       => 1,
+    'nutch'        => 1,
+    'stevewozniak' => 1,
+    'wozniak'      => 1,
+    'woz'          => 1,
 );

@@ -1,0 +1,18 @@
+framework:
+    secret:          secretsecretsecretsecretsecretsecret
+    #router:          { resource: "%kernel.root_dir%/config/routing.yml" }
+    form:            true
+    csrf_protection: true
+    session:         ~
+    default_locale:  en
+    translator:      { fallback: en }
+    profiler:        { only_exceptions: false }
+
+# These are also mirrored in the test: 
+# Ca\ProfileBundle\Tests\Services\ReservedNamesServiceTest
+alister_reserved_names:
+    names:
+        - alister
+        - private
+        - website
+        - 5NF4ZG7AYVJ8TQDXPUHKFPYG
