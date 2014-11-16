@@ -41,9 +41,9 @@ class ReservedNamesDirectTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue($this->rn->isReserved('alister'), 'alister was not reserved');
         $this->assertTrue($this->rn->isReserved('website'), 'website was not reserved');
         $this->assertTrue($this->rn->isReserved('private'), 'private was not reserved');
-
         $this->assertTrue($this->rn->isReserved('alister123'), 'alister123 was not reserved');
-        $this->assertFalse($this->rn->isReserved('notinthelist'), 'notinthelist was marked as reserved');
+
+        $this->assertFalse($this->rn->isReserved('notinthelist'), 'notinthelist was marked as reserved, but its not in the list!');
     }
 
     public function testCheckingAgainstTest()
