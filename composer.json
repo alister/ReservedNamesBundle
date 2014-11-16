@@ -1,30 +1,31 @@
 {
-    "name": "alister/reserved-names-bundle",
-    "description": "This bundle checks against a list of reserved names",
-    "keywords": [],
-    "type": "symfony-bundle",
-    "license": "MIT",
-    "authors": [
+    "name": "alister/reserved-names-bundle"
+    ,"description": "This bundle checks against a list of reserved names"
+    ,"keywords": []
+    ,"type": "symfony-bundle"
+    ,"license": "MIT"
+    ,"authors": [
         {
-            "name": "Alister Bulman",
-            "email": "abulman@gmail.com"
+            "name": "Alister Bulman"
+            ,"email": "abulman@gmail.com"
         }
-    ],
-    "require": {
-        "symfony/framework-bundle": "~2.3",
-        "sensio/framework-extra-bundle": "~2.3",
-        "symfony/console": "~2.0"
-    },
-    "require-dev": {
+    ]
+    ,"require": {
+        "symfony/framework-bundle": "~2.3"
+        ,"sensio/framework-extra-bundle": "~2.3"
+        ,"symfony/validator": "~2.3"
+        ,"symfony/console": "~2.0"
+    }
+    ,"require-dev": {
         "ibuildings/qa-tools": "~1.1"
-    },
-    "autoload": {
+    }
+    ,"autoload": {
         "psr-4": { "Alister\\ReservedNamesBundle\\": "src/ReservedNamesBundle" }
-    },
-    "minimum-stability": "stable",
-    "extra": {
+    }
+    ,"minimum-stability": "stable"
+    ,"extra": {
         "branch-alias": {
-            "dev-master": "0.7.x-dev"
+            "dev-master": "1.0.x-dev"
         }
     }
 }

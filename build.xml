@@ -73,6 +73,15 @@
         </exec>
     </target>
 
+    <target name="phpmd"
+            description="Perform project mess detection using PHPMD creating an output to screen">
+        <exec executable="vendor/bin/phpmd" failonerror="true">
+            <arg path="src/"/>
+            <arg value="text"/>
+            <arg value="phpmd.xml"/>
+        </exec>
+    </target>
+
     <target name="phpcs-ci"
             description="Find coding standard violations using PHP_CodeSniffer creating a log file for the continuous integration server">
         <exec executable="vendor/bin/phpcs" failonerror="true">
