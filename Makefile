@@ -1,15 +1,15 @@
-all: lint test
+all: lint test tidy
 
 lint:
 	ant php-lint-ci
 
-test: security full-ant
+test: security full-ant security
 
 full-ant:
-	ant
+	ant manual
 
 phpcs:
-	vendor/bin/phpcs -a --standard=PSR2 --extensions=php src/ tests
+	ant phpcs
 
 # Run composer, with HHVM
 hhvm-composer-update:

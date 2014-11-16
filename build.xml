@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project name="ReservedNamesBundle-ci" default="build">
-        <target name="build"
-            depends="prepare,php-lint-ci,phpmd-ci,phpcs-ci,phpcpd-ci,php-security-checker,phpunit-ci"/>
+    <target name="build"
+        depends="prepare,php-lint-ci,phpmd-ci,phpcs-ci,phpcpd-ci,php-security-checker,phpunit-ci"/>
+    <target name="manual"
+        depends="prepare,php-lint-ci,phpmd,phpcs,phpcpd-ci,php-security-checker,phpunit-ci"/>
 
     <target name="clean" description="Cleanup build artifacts">
         <delete dir="build/artifacts/coverage"/>
@@ -92,6 +94,23 @@
             <arg value="--warning-severity=0"/>
             <arg value="--extensions=php"/>
             <arg path="src/"/>
+            <arg path="tests/Services/"/>
+        </exec>
+    </target>
+
+    <target name="phpcs"
+            description="Find coding standard violations using PHP_CodeSniffer creating an output to screen">
+        <exec executable="vendor/bin/phpcs" failonerror="true">
+            <arg value="--report-checkstyle=build/artifacts/logs/checkstyle-php.xml"/>
+            <arg value="--report=full"/>
+            <arg value="--standard=phpcs.xml"/>
+            <!-- Don't show warnings-->
+            <arg value="--warning-severity=10"/>
+            <arg value="--extensions=php"/>
+            <!-- Allow the dev to fix, and rerun -->
+            <arg value="-a"/>
+            <arg path="src/"/>
+            <arg path="tests/Services/"/>
         </exec>
     </target>
 
