@@ -1,20 +1,23 @@
 # ReservedNamesBundle - alister/reserved-names-bundle
 
-A bundle to clean, and check, a given username against an (extensible) list of reserved words/usernames
+A bundled service to clean, and check, a given username against an (extensible) list of reserved words/usernames
 
 # Installation and use
 
 1. Add to app/AppKernel.php
 
+    ```php
     $bundles = array(
         new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
         // ... many others
 
         new Alister\ReservedNamesBundle\AlisterReservedNamesBundle(),
     );
+    ```
 
 2. Add to app/config/config.yml
 
+    ```yaml
     alister_reserved_names:
         names:
             # These keys will be lower-cased
@@ -22,20 +25,24 @@ A bundle to clean, and check, a given username against an (extensible) list of r
             - myothername
             - alister
             - private
+    ```
 
 3. Use
         
+    ```php
     $username = 'myname_123';
     $reserved = $this->container->get('alister_reserved_names.check');
     if ($reserved->isReserved($username)) {
         echo "{$username} is reserved";
     }
+    ```
 
 4. Services provided:
 
 * alister_reserved_names.check 
-  * Check usernanme does not match a reserved name, before or after calling @cleanusername
+  * Check username does not match a reserved name, before or after calling @cleanusername
   * @see Alister\ReservedNamesBundle\Services\ReservedNames
+  * The code also strips off trailing 's', and then additional noise characters (digits, -, _) for a final test against the reserved names
 * alister_reserved_names.cleanusername
   * remove 'noise characters' around the given username
   * EG: myname_123 becomes myname
@@ -43,11 +50,7 @@ A bundle to clean, and check, a given username against an (extensible) list of r
 
 ## Included tests
 
-Testing is done with the classes directly, and also via a container, to test the service initialisation.
-
-## How to create a test setup for a local test of the service
-
-http://blog.kevingomez.fr/2013/01/09/functional-testing-standalone-symfony2-bundles/
+Testing is done with the classes directly, and also via a container, to test the service initialisation. This also allows a check for the 'local reservations' - extra names that can be defined in the local application. The container-based test includes a micro-application to build the container, and so run the full test. [How to create a test setup for a local test of the service](http://blog.kevingomez.fr/2013/01/09/functional-testing-standalone-symfony2-bundles/).
 
 ## @todo
 
