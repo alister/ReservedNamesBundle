@@ -109,15 +109,16 @@ class ReservedNamesServiceTest extends KernelTestCase
             [ 'alister-_1-23 ', 'alister* should be reserved' ],
             [ 'postmasters',    'postmaster* should be reserved' ],
             [ 'www123s',        'www* should be reserved' ],
-            [ 'contactus',      'contactu should also be reserved' ],
+            [ 'contactus',      'contactus should also be reserved' ],
+            [ 'contactu',       'contactu is in the reserved list' ],
         );
     }
 
     public function notReservedNamesDataProvider()
     {
         return array(
-            [ 'contactu',     'contactu (no trailing S) should not be reserved' ],
-            [ 'wwwww',        '5xw should not be reserved' ],
+            [ 'contac',       'contac should not be reserved' ],
+            [ 'wwwww',        '5 *w should not be reserved' ],
             [ 'notinthelist', 'notinthelist should not be reserved' ],
 
             // testCleanedNameIsDifferentButStillNotReserved
