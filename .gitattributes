@@ -1,0 +1,14 @@
+/tests/               export-ignore
+/.travis.php.ini      export-ignore
+/.travis.yml          export-ignore
+/build-pre-commit.xml export-ignore
+/build.xml            export-ignore
+/LICENSE              export-ignore
+/Makefile             export-ignore
+/phpcs.xml            export-ignore
+/phpmd-pre-commit.xml export-ignore
+/phpmd.xml            export-ignore
+/phpunit.xml          export-ignore
+/phpunit.xml.dist     export-ignore
+/qa-tools.json        export-ignore
+/README.md            export-ignore
