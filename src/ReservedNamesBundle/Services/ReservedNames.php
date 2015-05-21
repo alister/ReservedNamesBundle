@@ -13,7 +13,7 @@ class ReservedNames implements ReservedNamesInterface
 
     public function __construct(array $reservedNames, CleanUserNamesInterface $cleanUsername)
     {
-        if (! $this->reservedNames) {
+        if (empty($this->reservedNames)) {
             $this->reservedNames = $reservedNames;
         }
         $this->cleanUsername = $cleanUsername;
