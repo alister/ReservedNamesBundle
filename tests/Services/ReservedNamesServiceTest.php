@@ -10,16 +10,16 @@ class ReservedNamesServiceTest extends KernelTestCase
     /** @var Alister\ReservedNamesBundle\Services\ReservedNames */
     protected $rn;
 
-    static private $container;
+    private static $container;
 
     public static function setUpBeforeClass()
     {
-         //start the symfony kernel
-         $kernel = static::createKernel();
-         $kernel->boot();
+        //start the symfony kernel
+        $kernel = static::createKernel();
+        $kernel->boot();
 
-         //get the DI container
-         self::$container = $kernel->getContainer();
+        //get the DI container
+        self::$container = $kernel->getContainer();
     }
 
     /* for reference, this is a copy of the configured 'local' reserved names
