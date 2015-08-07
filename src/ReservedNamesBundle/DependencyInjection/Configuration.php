@@ -28,8 +28,7 @@ class Configuration implements ConfigurationInterface
                     ->info('multiple names that will not be allowed as new users')
                     ->example('billgates, stevewoz')
                 ->end()
-            ->end()
-        ;
+            ->end();
 
         return $treeBuilder;
     }

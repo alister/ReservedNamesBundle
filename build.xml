@@ -86,7 +86,7 @@
 
     <target name="phpcs-ci"
             description="Find coding standard violations using PHP_CodeSniffer creating a log file for the continuous integration server">
-        <exec executable="vendor/bin/phpcs" failonerror="true">
+        <exec executable="vendor/bin/phpcs" failonerror="false">
             <arg value="--report-checkstyle=build/artifacts/logs/checkstyle-php.xml"/>
             <arg value="--report=full"/>
             <arg value="--standard=phpcs.xml"/>
