@@ -27,6 +27,7 @@ cache:
 before_script:
   - phpenv config-add .travis.php.ini
   - composer self-update
+  - composer config --global github-oauth.github.com $GITHUB_OAUTH_TOKEN
   - if [ -z "$dependencies" ]; then composer install; fi;
   - if [ "$dependencies" = "lowest" ]; then rm -rf vendor; composer update --prefer-lowest --no-interaction ; fi;
   - if [ "$dependencies" = "highest" ]; then composer update --no-interaction ; fi;
