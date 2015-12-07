@@ -1,6 +1,8 @@
 # ReservedNamesBundle - alister/reserved-names-bundle
 
-A bundled service to clean, and check, a given username against an (extensible) list of reserved words/usernames
+A bundled service to clean, and check, a given username against an (extensible) list of reserved words/usernames.
+
+Note: This DOES NOT validate usernames. That should happen (and potentially disallow names) before getting to this stage.
 
 # Installation and use
 
