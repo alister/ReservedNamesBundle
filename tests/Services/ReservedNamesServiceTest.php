@@ -101,16 +101,22 @@ class ReservedNamesServiceTest extends KernelTestCase
     {
         return array(
             [ 'alister',        'alister should be reserved' ],
-            [ 'website',        'website should be reserved' ],
-            [ 'private',        'private should be reserved' ],
+            [ 'alister-_1-23 ', 'alister* should be reserved' ],
             [ 'alister123',     'alister123 should be reserved' ],
             [ 'alister123s',    'alister123 should be reserved' ],
             [ 'alisters123',    'alister123 should be reserved' ],
-            [ 'alister-_1-23 ', 'alister* should be reserved' ],
+            [ 'contactu',       'contactu should be reserved' ],
+            [ 'contactus',      'contactus should be reserved' ],
+            [ 'crossdomain',    'crossdomain should be reserved' ],
+            [ 'favicon',        'favicon should be reserved' ],
+            [ 'htaccess ',      'htaccess should be reserved' ],
             [ 'postmasters',    'postmaster* should be reserved' ],
+            [ 'private',        'private should be reserved' ],
+            [ 'robots',         'robots should be reserved' ],
+            [ 'website',        'website should be reserved' ],
+            [ 'well-known',     'well-known should be reserved' ],
             [ 'www123s',        'www* should be reserved' ],
-            [ 'contactus',      'contactus should also be reserved' ],
-            [ 'contactu',       'contactu is in the reserved list' ],
+            [ 'clientaccesspolicy', 'clientaccesspolicy.xml should be reserved' ],
         );
     }
 
@@ -120,6 +126,7 @@ class ReservedNamesServiceTest extends KernelTestCase
             [ 'contac',       'contac should not be reserved' ],
             [ 'wwwww',        '5 *w should not be reserved' ],
             [ 'notinthelist', 'notinthelist should not be reserved' ],
+            #[ 'ca12345ab',    'ca12345ab should not be reserved' ], but collapses to 'ca', which is
 
             // testCleanedNameIsDifferentButStillNotReserved
             [ 'notreserved',      'Cleaned name is diff, but still not reserved' ],
