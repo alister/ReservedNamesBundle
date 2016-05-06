@@ -17,6 +17,11 @@ matrix:
       env: dependencies=highest
     - php: 7
       env: dependencies=highest
+    - php: nightly
+      env: dependencies=highest
+  allow_failures:
+    - php: nightly
+  fast_finish: true
 
 ## Cache composer bits, where possible
 cache:
@@ -35,7 +40,3 @@ before_script:
 
 script:
   - ant
-
-branches:
-  only:
-  - master
