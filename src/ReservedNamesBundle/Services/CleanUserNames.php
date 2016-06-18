@@ -6,7 +6,7 @@ use Alister\ReservedNamesBundle\Services\CleanUserNamesInterface;
 /**
  * Remove characters around the username to get to the essence of the username
  *
- * This means any whitespace, or numbers. I'm assuming that usernames can only 
+ * This means any whitespace, or numbers. I'm assuming that usernames can only
  * contain characters in the set [a-zA-Z01-9_-], and will start with -_ or alpha
  */
 class CleanUserNames implements CleanUserNamesInterface
@@ -18,7 +18,7 @@ class CleanUserNames implements CleanUserNamesInterface
      *  * __php_hello => php_hello
      *
      * @param string $username string to trim down
-     * 
+     *
      * @return string 'clean' username without some chars around the first 'word'
      */
     public function clean($username)
