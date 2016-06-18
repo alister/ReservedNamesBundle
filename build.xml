@@ -2,9 +2,9 @@
 
 <project name="ReservedNamesBundle-ci" default="build">
     <target name="build"
-        depends="prepare,php-lint-ci,phpmd-ci,phpcs-ci,phpcpd-ci,php-security-checker,phpunit-ci"/>
+        depends="prepare,tidy,php-lint-ci,phpmd-ci,phpcs-ci,phpcpd-ci,php-security-checker,phpunit-ci"/>
     <target name="manual"
-        depends="prepare,php-lint-ci,phpmd,phpcs,phpcpd-ci,php-security-checker,phpunit-ci"/>
+        depends="prepare,tidy,php-lint-ci,phpmd,phpcs,phpcpd-ci,php-security-checker,phpunit-ci"/>
 
     <target name="clean" description="Cleanup build artifacts">
         <delete dir="build/artifacts/coverage"/>
@@ -14,6 +14,12 @@
     <target name="prepare" depends="clean" description="Prepare for build">
         <mkdir dir="build/artifacts/coverage"/>
         <mkdir dir="build/artifacts/logs"/>
+    </target>
+
+    <target name="tidy" depends="prepare" description="tidy up minor source issues">
+        <exec executable="make" failonerror="true">
+            <arg value="tidy"/>
+        </exec>
     </target>
 
     <target name="get-changeset.php.raw"
