@@ -1,9 +1,8 @@
 <?php
+
 namespace Ca\ProfileBundle\Tests\Services;
 
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
-use Alister\ReservedNamesBundle\Services\ReservedNames;
-use Alister\ReservedNamesBundle\Services\CleanUserNames;
 
 class ReservedNamesServiceTest extends KernelTestCase
 {
@@ -48,7 +47,7 @@ class ReservedNamesServiceTest extends KernelTestCase
     }
 
     /**
-     * Test the setup of the service
+     * Test the setup of the service.
      *
      * It should also have the local configuration for name reservation
      *
@@ -72,9 +71,10 @@ class ReservedNamesServiceTest extends KernelTestCase
     }
 
     /**
-     * Test against a list that should all be reserved
+     * Test against a list that should all be reserved.
      *
      * @dataProvider reservedNamesDataProvider
+     *
      * @param string $value [description]
      *
      * @return void
@@ -85,7 +85,7 @@ class ReservedNamesServiceTest extends KernelTestCase
     }
 
     /**
-     * Test against a list that have no reserved names
+     * Test against a list that have no reserved names.
      *
      * @param string $value [description]
      * @dataProvider notReservedNamesDataProvider
@@ -99,41 +99,41 @@ class ReservedNamesServiceTest extends KernelTestCase
 
     public function reservedNamesDataProvider()
     {
-        return array(
-            [ 'alister',        'alister should be reserved' ],
-            [ 'alister-_1-23 ', 'alister* should be reserved' ],
-            [ 'alister123',     'alister123 should be reserved' ],
-            [ 'alister123s',    'alister123 should be reserved' ],
-            [ 'alisters123',    'alister123 should be reserved' ],
-            [ 'contactu',       'contactu should be reserved' ],
-            [ 'contactus',      'contactus should be reserved' ],
-            [ 'crossdomain',    'crossdomain should be reserved' ],
-            [ 'favicon',        'favicon should be reserved' ],
-            [ 'htaccess ',      'htaccess should be reserved' ],
-            [ 'postmasters',    'postmaster* should be reserved' ],
-            [ 'private',        'private should be reserved' ],
-            [ 'robots',         'robots should be reserved' ],
-            [ 'website',        'website should be reserved' ],
-            [ 'well-known',     'well-known should be reserved' ],
-            [ 'www123s',        'www* should be reserved' ],
-            [ 'clientaccesspolicy', 'clientaccesspolicy.xml should be reserved' ],
-        );
+        return [
+            ['alister',        'alister should be reserved'],
+            ['alister-_1-23 ', 'alister* should be reserved'],
+            ['alister123',     'alister123 should be reserved'],
+            ['alister123s',    'alister123 should be reserved'],
+            ['alisters123',    'alister123 should be reserved'],
+            ['contactu',       'contactu should be reserved'],
+            ['contactus',      'contactus should be reserved'],
+            ['crossdomain',    'crossdomain should be reserved'],
+            ['favicon',        'favicon should be reserved'],
+            ['htaccess ',      'htaccess should be reserved'],
+            ['postmasters',    'postmaster* should be reserved'],
+            ['private',        'private should be reserved'],
+            ['robots',         'robots should be reserved'],
+            ['website',        'website should be reserved'],
+            ['well-known',     'well-known should be reserved'],
+            ['www123s',        'www* should be reserved'],
+            ['clientaccesspolicy', 'clientaccesspolicy.xml should be reserved'],
+        ];
     }
 
     public function notReservedNamesDataProvider()
     {
-        return array(
-            [ 'contac',       'contac should not be reserved' ],
-            [ 'wwwww',        '5 *w should not be reserved' ],
-            [ 'notinthelist', 'notinthelist should not be reserved' ],
-            #[ 'ca12345ab',    'ca12345ab should not be reserved' ], but collapses to 'ca', which is
+        return [
+            ['contac',       'contac should not be reserved'],
+            ['wwwww',        '5 *w should not be reserved'],
+            ['notinthelist', 'notinthelist should not be reserved'],
+            //[ 'ca12345ab',    'ca12345ab should not be reserved' ], but collapses to 'ca', which is
 
             // testCleanedNameIsDifferentButStillNotReserved
-            [ 'notreserved',      'Cleaned name is diff, but still not reserved' ],
-            [ 'notreserved123',   'Cleaned name is diff, but still not reserved' ],
-            [ 'notreserveds',     'Cleaned name is diff, but still not reserved' ],
-            [ 'notreserved-123s', 'Cleaned name is diff, but still not reserved' ],
-        );
+            ['notreserved',      'Cleaned name is diff, but still not reserved'],
+            ['notreserved123',   'Cleaned name is diff, but still not reserved'],
+            ['notreserveds',     'Cleaned name is diff, but still not reserved'],
+            ['notreserved-123s', 'Cleaned name is diff, but still not reserved'],
+        ];
     }
 
     /**
@@ -147,14 +147,14 @@ class ReservedNamesServiceTest extends KernelTestCase
         $this->assertFalse($this->rn->isTest($name));
         $this->assertFalse($this->rn->isReserved($name));
 
-        $name = 'test' . $name;
+        $name = 'test'.$name;
         // now it's a test and so is also reserved
         $this->assertTrue($this->rn->isTest($name));
         $this->assertTrue($this->rn->isReserved($name));
     }
 
     /**
-     * Finally, a plain check against isTest() alone
+     * Finally, a plain check against isTest() alone.
      *
      * @return void
      */

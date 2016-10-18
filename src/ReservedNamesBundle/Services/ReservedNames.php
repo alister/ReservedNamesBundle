@@ -1,7 +1,6 @@
 <?php
-namespace Alister\ReservedNamesBundle\Services;
 
-use Alister\ReservedNamesBundle\Services\CleanUserNamesInterface;
+namespace Alister\ReservedNamesBundle\Services;
 
 class ReservedNames implements ReservedNamesInterface
 {
@@ -33,11 +32,11 @@ class ReservedNames implements ReservedNamesInterface
     }
 
     /**
-     * A ReservedName is one based on a list - we also strip numbers and '-_' chars
+     * A ReservedName is one based on a list - we also strip numbers and '-_' chars.
      *
-     * @param string  $username [description]
+     * @param string $username [description]
      *
-     * @return boolean Is the username reserved?
+     * @return bool Is the username reserved?
      */
     public function isReserved($username)
     {
@@ -64,16 +63,17 @@ class ReservedNames implements ReservedNamesInterface
     }
 
     /**
-     * For our point of view, we are looking for anything with an 's'
+     * For our point of view, we are looking for anything with an 's'.
      *
-     * @param string  $username [description]
+     * @param string $username [description]
      *
-     * @return boolean Does it have an 's' at the end (with any 'noise chars' before it)
+     * @return bool Does it have an 's' at the end (with any 'noise chars' before it)
      */
     public function isReservedPlural($username)
     {
         // finally, remove any trailing 's', or the usual other chars
         $cleanerName = rtrim($username, 's0123456789-_ ');
+
         return $this->inReservedList($cleanerName);
     }
 
@@ -82,15 +82,15 @@ class ReservedNames implements ReservedNamesInterface
      *
      * @param string username to clean and check
      *
-     * @return boolean true if the first 4 'real' chars are 'test'
+     * @return bool true if the first 4 'real' chars are 'test'
      */
     public function isTest($username, $isClean = false)
     {
-        if (! $isClean) {
+        if (!$isClean) {
             $username = $this->cleanUsername->clean($username);
         }
 
-        /**
+        /*
          * This direct-check-return is good for code complexity,
          * but doesn't obviously check the true and false cases.
          * With an explicit return true/false, we would prove that

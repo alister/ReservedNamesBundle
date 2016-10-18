@@ -1,8 +1,9 @@
 <?php
+
 namespace Ca\ProfileBundle\Tests\Services;
 
-use Alister\ReservedNamesBundle\Services\ReservedNames;
 use Alister\ReservedNamesBundle\Services\CleanUserNames;
+use Alister\ReservedNamesBundle\Services\ReservedNames;
 
 class ReservedNamesDirectTest extends \PHPUnit_Framework_TestCase
 {
@@ -19,7 +20,7 @@ class ReservedNamesDirectTest extends \PHPUnit_Framework_TestCase
             'alister' => 1, 'website' => 1, 'private' => 1,
         ];
         // build the classes directly
-        $clean = new CleanUserNames;
+        $clean = new CleanUserNames();
         $this->rn = new ReservedNames($this->names, $clean);
     }
 
