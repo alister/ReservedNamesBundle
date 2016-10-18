@@ -1,4 +1,5 @@
 <?php
+
 namespace Alister\ReservedNamesBundle\Services;
 
 interface CleanUserNamesInterface

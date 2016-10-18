@@ -1,4 +1,5 @@
 <?php
+
 namespace Alister\ReservedNamesBundle\Tests\DependencyInjection;
 
 use Alister\ReservedNamesBundle\DependencyInjection\AlisterReservedNamesExtension;
@@ -23,9 +24,9 @@ class ReservedNamesExtensionTest extends \PHPUnit_Framework_TestCase
         $this->container = new ContainerBuilder();
         $this->extension = new AlisterReservedNamesExtension();
 
-        $this->localAppConfig = array(
-            ['names' => [ 'a', 'PUYOWCBQYHZJXENBLZZJ' ]],
-        );
+        $this->localAppConfig = [
+            ['names' => ['a', 'PUYOWCBQYHZJXENBLZZJ']],
+        ];
     }
 
     public function testShouldLoadDefaultConfiguration()
