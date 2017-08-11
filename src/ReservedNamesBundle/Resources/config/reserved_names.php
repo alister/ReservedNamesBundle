@@ -186,6 +186,7 @@ return [
     'discussion'         => 1,
     'dist'               => 1,
     'dl'                 => 1,
+    'dmca'               => 1,
     'doc'                => 1,
     'document'           => 1,
     'documentation'      => 1,
