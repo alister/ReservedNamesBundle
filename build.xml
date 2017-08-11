@@ -129,7 +129,7 @@
     </target>
 
     <target name="phpunit-ci" description="Run unit tests with PHPUnit">
-        <exec executable="/usr/bin/phpdbg" failonerror="true">
+        <exec executable="phpdbg" failonerror="true">
             <arg line=" -qrr vendor/bin/phpunit"/>
             <arg line="--configuration=${basedir}/"/>
             <arg line="--coverage-html=build/artifacts/coverage"/>
