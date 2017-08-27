@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project name="ReservedNamesBundle-ci" default="build">
-    <target name="build"
+    <target name="build" 
         depends="prepare,tidy,php-lint-ci,phpmd-ci,phpcs-ci,phpcpd-ci,php-security-checker,phpunit-ci"/>
-    <target name="manual"
+    <target name="manual" 
         depends="prepare,tidy,php-lint-ci,phpmd,phpcs,phpcpd-ci,php-security-checker,phpunit-ci"/>
+    <target name="travis" depends="php-lint-ci,phpmd-ci,phpcs-ci,phpcpd-ci,phpunit-ci"/>
 
     <target name="clean" description="Cleanup build artifacts">
         <delete dir="build/artifacts/coverage"/>
