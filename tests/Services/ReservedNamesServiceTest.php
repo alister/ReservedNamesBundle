@@ -1,5 +1,5 @@
 <?php
-
+declare(strict_types=1);
 namespace Ca\ProfileBundle\Tests\Services;
 
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;

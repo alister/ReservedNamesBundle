@@ -1,11 +1,12 @@
 <?php
-
+declare(strict_types=1);
 namespace Ca\ProfileBundle\Tests\Services;
 
 use Alister\ReservedNamesBundle\Services\CleanUserNames;
 use Alister\ReservedNamesBundle\Services\ReservedNames;
+use PHPUnit\Framework\TestCase;
 
-class ReservedNamesDirectTest extends \PHPUnit_Framework_TestCase
+class ReservedNamesDirectTest extends TestCase
 {
     /** @var Alister\ReservedNamesBundle\Services\ReservedNames */
     protected $rn;

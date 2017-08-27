@@ -1,11 +1,12 @@
 <?php
-
+declare(strict_types=1);
 namespace Alister\ReservedNamesBundle\Tests\DependencyInjection;
 
 use Alister\ReservedNamesBundle\DependencyInjection\AlisterReservedNamesExtension;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
-class ReservedNamesExtensionTest extends \PHPUnit_Framework_TestCase
+class ReservedNamesExtensionTest extends TestCase
 {
     /**
      * @var Symfony\Component\DependencyInjection\ContainerBuilder
