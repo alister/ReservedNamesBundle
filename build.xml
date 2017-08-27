@@ -13,6 +13,8 @@
     </target>
 
     <target name="prepare" depends="clean" description="Prepare for build">
+        <mkdir dir="build"/>
+        <mkdir dir="build/artifacts"/>
         <mkdir dir="build/artifacts/coverage"/>
         <mkdir dir="build/artifacts/logs"/>
     </target>
@@ -71,7 +73,7 @@
         </exec>
     </target>
 
-    <target name="phpmd-ci"
+    <target name="phpmd-ci" depends="prepare"
             description="Perform project mess detection using PHPMD creating a log file for the continuous integration server">
         <exec executable="vendor/bin/phpmd" failonerror="true">
             <arg path="src/"/>
@@ -82,7 +84,7 @@
         </exec>
     </target>
 
-    <target name="phpmd"
+    <target name="phpmd" depends="prepare"
             description="Perform project mess detection using PHPMD creating an output to screen">
         <exec executable="vendor/bin/phpmd" failonerror="true">
             <arg path="src/"/>

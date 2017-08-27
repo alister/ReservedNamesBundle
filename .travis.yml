@@ -26,6 +26,7 @@ cache:
     - $HOME/.composer/cache
 
 before_script:
+  - rm -rf /tmp/AlisterReservedNamesBundle
   - phpenv config-add .travis.php.ini
   - composer self-update
   - composer config --global github-oauth.github.com $GITHUB_OAUTH_TOKEN
