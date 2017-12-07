@@ -24,7 +24,9 @@
         ,"symfony/yaml": "^3.3|^4.0"
     }
     ,"autoload": {
-        "psr-4": { "Alister\\ReservedNamesBundle\\": "src/ReservedNamesBundle" },
+        "psr-4": { "Alister\\ReservedNamesBundle\\": "src/ReservedNamesBundle" }
+    }
+    ,"autoload-dev": {
         "files": [ "tests/app/AppKernel.php" ]
     }
     ,"minimum-stability": "stable"
