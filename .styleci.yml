@@ -4,11 +4,12 @@ risky: false
 
 enabled:
   - no_blank_lines_before_namespace
+  - align_double_arrow
 disabled:
   - blank_line_after_opening_tag
   - blank_line_before_declare
   - single_blank_line_before_namespace
-
+  - unalign_double_arrow
 #finder:
 #  exclude:
 #    - "tests"
