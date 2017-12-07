@@ -1,0 +1,28 @@
+preset: symfony
+
+risky: false
+
+enabled:
+  - no_blank_lines_before_namespace
+
+disabled:
+  - blank_line_after_opening_tag
+  - blank_line_before_declare
+
+#finder:
+#  exclude:
+#    - "tests"
+#  name:
+#    - "*.php"
+#  not-name:
+#    - "*Stub.php"
+#  contains:
+#    - "Foo"
+#  not-contains:
+#    - "config"
+#  path:
+#    - "foo/Stuff"
+#  not-path:
+#    - "libraries"
+#  depth:
+#    - "< 3"
