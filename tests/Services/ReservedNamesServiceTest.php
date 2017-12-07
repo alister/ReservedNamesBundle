@@ -11,7 +11,7 @@ class ReservedNamesServiceTest extends KernelTestCase
 
     private static $container;
 
-    public static function setUpBeforeClass()
+    public static function setUpBeforeClass(): void
     {
         //start the symfony kernel
         $kernel = static::createKernel();
@@ -39,7 +39,7 @@ class ReservedNamesServiceTest extends KernelTestCase
      *
      * We list some of our 'local' reservations, to test that part works
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         // now we can instantiate our service (if you want a fresh one for
         // each test method, do this in setUp() instead
@@ -53,7 +53,7 @@ class ReservedNamesServiceTest extends KernelTestCase
      *
      * @return [type] [description]
      */
-    public function testSanityService()
+    public function testSanityService(): void
     {
         $this->assertInstanceOf('Alister\ReservedNamesBundle\Services\ReservedNames', $this->rn);
 
@@ -76,10 +76,8 @@ class ReservedNamesServiceTest extends KernelTestCase
      * @dataProvider reservedNamesDataProvider
      *
      * @param string $value [description]
-     *
-     * @return void
      */
-    public function testReservedNames($username, $reason)
+    public function testReservedNames($username, $reason): void
     {
         $this->assertTrue($this->rn->isReserved($username), $reason);
     }
@@ -89,15 +87,13 @@ class ReservedNamesServiceTest extends KernelTestCase
      *
      * @param string $value [description]
      * @dataProvider notReservedNamesDataProvider
-     *
-     * @return void
      */
-    public function testNotReservedNames($username, $reason)
+    public function testNotReservedNames($username, $reason): void
     {
         $this->assertFalse($this->rn->isReserved($username), $reason);
     }
 
-    public function reservedNamesDataProvider()
+    public function reservedNamesDataProvider(): array
     {
         return [
             ['alister',        'alister should be reserved'],
@@ -120,7 +116,7 @@ class ReservedNamesServiceTest extends KernelTestCase
         ];
     }
 
-    public function notReservedNamesDataProvider()
+    public function notReservedNamesDataProvider(): array
     {
         return [
             ['contac',       'contac should not be reserved'],
@@ -138,10 +134,8 @@ class ReservedNamesServiceTest extends KernelTestCase
 
     /**
      * Whatever we say, when it's prefixed with 'test' - it's a test.
-     *
-     * @return void
      */
-    public function testReservedNameIsPrefixedWithtest()
+    public function testReservedNameIsPrefixedWithtest(): void
     {
         $name = 'isthisreserved';  // not reserved, or a test - yet
         $this->assertFalse($this->rn->isTest($name));
@@ -155,10 +149,8 @@ class ReservedNamesServiceTest extends KernelTestCase
 
     /**
      * Finally, a plain check against isTest() alone.
-     *
-     * @return void
      */
-    public function testCheckingAgainstIsTest()
+    public function testCheckingAgainstIsTest(): void
     {
         $this->assertTrue($this->rn->isTest('test'));
         $this->assertTrue($this->rn->isTest('test123123'));
