@@ -10,7 +10,6 @@
 // * https://github.com/shutterstock/List-of-Dirty-Naughty-Obscene-and-Otherwise-Bad-Words
 
 return [
-
     // misc names / Generic reserved words
     // Also crosses over with rfc2142.txt
     'about'              => 1,

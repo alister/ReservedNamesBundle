@@ -1,5 +1,4 @@
 <?php
-
 namespace Alister\ReservedNamesBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;

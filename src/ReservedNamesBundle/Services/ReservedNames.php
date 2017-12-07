@@ -1,5 +1,4 @@
 <?php
-
 namespace Alister\ReservedNamesBundle\Services;
 
 class ReservedNames implements ReservedNamesInterface
