@@ -4,10 +4,10 @@ risky: false
 
 enabled:
   - no_blank_lines_before_namespace
-
 disabled:
   - blank_line_after_opening_tag
   - blank_line_before_declare
+  - single_blank_line_before_namespace
 
 #finder:
 #  exclude:
