@@ -2,24 +2,12 @@
 declare(strict_types=1);
 namespace Ca\ProfileBundle\Tests\Services;
 
-use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
+use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class ReservedNamesServiceTest extends KernelTestCase
+class ReservedNamesServiceTest extends WebTestCase
 {
     /** @var Alister\ReservedNamesBundle\Services\ReservedNames */
     protected $rn;
-
-    private static $container;
-
-    public static function setUpBeforeClass(): void
-    {
-        //start the symfony kernel
-        $kernel = static::createKernel();
-        $kernel->boot();
-
-        //get the DI container
-        self::$container = $kernel->getContainer();
-    }
 
     /* for reference, this is a copy of the configured 'local' reserved names
        from ./tests/app/config/config.yml
@@ -41,8 +29,9 @@ class ReservedNamesServiceTest extends KernelTestCase
      */
     protected function setUp(): void
     {
-        // now we can instantiate our service (if you want a fresh one for
-        // each test method, do this in setUp() instead
+        self::bootKernel();
+
+        // now we can instantiate our service
         $this->rn = self::$container->get('alister_reserved_names.check');
     }
 
