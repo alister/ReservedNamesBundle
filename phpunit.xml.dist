@@ -11,6 +11,7 @@
          syntaxCheck="false">
 
     <php>
+        <ini name="memory_limit" value="-1" />
         <server name="KERNEL_CLASS" value="AppKernel" />
         <server name="KERNEL_DIR" value="./tests/app" />
         <server name="SYMFONY_DEPRECATIONS_HELPER" value="weak" />

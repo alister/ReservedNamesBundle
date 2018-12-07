@@ -11,3 +11,5 @@ services:
         arguments:
             - "%alister_reserved_names.names%"
             - "@alister_reserved_names.cleanusername"
+    Alister\ReservedNamesBundle\Services\ReservedNames: '@alister_reserved_names.check'
+    Alister\ReservedNamesBundle\Services\CleanUserNames: '@alister_reserved_names.cleanusername'
