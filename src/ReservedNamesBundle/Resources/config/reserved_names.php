@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection SpellCheckingInspection */
 
 // pre-reserved names
 
@@ -297,10 +297,8 @@ return [
     'irc'                => 1,
     'irnage'             => 1,
     'irng'               => 1,
-    'is'                 => 1,
     'isatap'             => 1,
     'issue'              => 1,
-    'it'                 => 1,
     'item'               => 1,
     'j'                  => 1,
     'java'               => 1,
