@@ -63,5 +63,10 @@ See: http://stackoverflow.com/questions/7004601/symfony2-testing-entity-validati
 ## Badges
 
 [![Build Status](https://travis-ci.org/alister/ReservedNamesBundle.svg?branch=master)](https://travis-ci.org/alister/ReservedNamesBundle) [![SensioLabsInsight](https://insight.sensiolabs.com/projects/8be6b1cb-f48d-4447-b9b4-682f549aa40c/mini.png)](https://insight.sensiolabs.com/projects/8be6b1cb-f48d-4447-b9b4-682f549aa40c) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/alister/ReservedNamesBundle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/alister/ReservedNamesBundle/?branch=master)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Falister%2FReservedNamesBundle.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Falister%2FReservedNamesBundle?ref=badge_shield)
 
 [![Latest Stable Version](https://poser.pugx.org/alister/reserved-names-bundle/v/stable.svg)](https://packagist.org/packages/alister/reserved-names-bundle) [![Total Downloads](https://poser.pugx.org/alister/reserved-names-bundle/downloads.svg)](https://packagist.org/packages/alister/reserved-names-bundle) [![Latest Unstable Version](https://poser.pugx.org/alister/reserved-names-bundle/v/unstable.svg)](https://packagist.org/packages/alister/reserved-names-bundle) [![License](https://poser.pugx.org/alister/reserved-names-bundle/license.svg)](https://packagist.org/packages/alister/reserved-names-bundle)
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Falister%2FReservedNamesBundle.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Falister%2FReservedNamesBundle?ref=badge_large)
