@@ -95,6 +95,6 @@ class ReservedNames implements ReservedNamesInterface
          * With an explicit return true/false, we would prove that
          * both possibilities were covered.
          */
-        return strpos($username, 'test') === 0;
+        return 0 === strpos($username, 'test');
     }
 }
