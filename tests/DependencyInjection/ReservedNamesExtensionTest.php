@@ -20,7 +20,7 @@ class ReservedNamesExtensionTest extends TestCase
 
     private $defaultConfig;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->container = new ContainerBuilder();
         $this->extension = new AlisterReservedNamesExtension();
@@ -30,7 +30,7 @@ class ReservedNamesExtensionTest extends TestCase
         ];
     }
 
-    public function testShouldLoadDefaultConfiguration()
+    public function testShouldLoadDefaultConfiguration(): void
     {
         $this->extension->load($this->localAppConfig, $this->container);
         $this->assertDefaultConfigDefinition();
@@ -47,7 +47,7 @@ class ReservedNamesExtensionTest extends TestCase
      *
      * @param array $config
      */
-    private function assertDefaultConfigDefinition()
+    private function assertDefaultConfigDefinition(): void
     {
         $this->assertInstanceOf('Symfony\Component\DependencyInjection\ContainerBuilder', $this->container);
         $this->assertTrue($this->container->hasParameter('alister_reserved_names.names'));
@@ -66,7 +66,7 @@ class ReservedNamesExtensionTest extends TestCase
      * @param string $name
      * @param array  $config
      * /
-    private function assertConfigDefinition($name, array $config)
+    private function assertConfigDefinition($name, array $config): void
     {
         $this->assertTrue($this->container->hasDefinition('alister_reserved_names.config.' . $name));
 
@@ -85,7 +85,7 @@ class ReservedNamesExtensionTest extends TestCase
         $this->assertEquals(array($config), $calls[0][1]);
     }*/
 
-    /*public function testShouldResolveServices()
+    /*public function testShouldResolveServices(): void
     {
         $container = new ContainerBuilder;
         $extension = new AlisterReservedNamesExtension();

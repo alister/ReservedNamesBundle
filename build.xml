@@ -132,13 +132,14 @@
     </target>
 
     <target name="phpunit-ci" description="Run unit tests with PHPUnit">
-        <exec executable="phpdbg" failonerror="true">
-            <arg line=" -qrr vendor/bin/phpunit"/>
+        <exec executable="phpdbg" failonerror="true"> <!-- phpdbg  -->
+            <arg line=" -qrr vendor/bin/phpunit "/>
+            <!--<arg line=" -qrr phpunit-8.phar"/>-->
             <arg line="--configuration=${basedir}/"/>
-            <arg line="--coverage-html=build/artifacts/coverage"/>
-            <arg line="--log-junit=build/artifacts/logs/junit.xml"/>
-            <arg line="--coverage-clover=build/artifacts/logs/clover.xml"/>
-            <arg line="--coverage-text"/>
+            <!--<arg line="&#45;&#45;coverage-html=build/artifacts/coverage"/>
+            <arg line="&#45;&#45;log-junit=build/artifacts/logs/junit.xml"/>
+            <arg line="&#45;&#45;coverage-clover=build/artifacts/logs/clover.xml"/>
+            <arg line="&#45;&#45;coverage-text"/> -->
         </exec>
     </target>
 

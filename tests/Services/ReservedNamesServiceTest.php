@@ -47,7 +47,7 @@ class ReservedNamesServiceTest extends WebTestCase
         $this->assertInstanceOf('Alister\ReservedNamesBundle\Services\ReservedNames', $this->rn);
 
         $names = $this->rn->getReservedNames();
-        $this->assertInternalType('array', $names);
+        $this->assertIsArray($names);
 
         // we gave it an all-uppercase 'secret name', which it str-to-lower's'
         $this->assertArrayNotHasKey(self::SECRET_NAME, $names);

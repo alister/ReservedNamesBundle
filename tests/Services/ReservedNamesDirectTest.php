@@ -15,7 +15,7 @@ class ReservedNamesDirectTest extends TestCase
      * Sets up the fixture, for example, opens a network connection.
      * This method is called before a test is executed.
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->names = [
             'alister' => 1, 'website' => 1, 'private' => 1,
@@ -25,12 +25,12 @@ class ReservedNamesDirectTest extends TestCase
         $this->rn = new ReservedNames($this->names, $clean);
     }
 
-    public function testSanityServiceClass()
+    public function testSanityServiceClass(): void
     {
         $this->assertInstanceOf('Alister\ReservedNamesBundle\Services\ReservedNames', $this->rn);
 
         $names = $this->rn->getReservedNames();
-        $this->assertInternalType('array', $names);
+        $this->assertIsArray($names);
         $this->assertEquals($this->names, $names);
 
         $this->assertGreaterThanOrEqual(3, count($names));
@@ -38,7 +38,7 @@ class ReservedNamesDirectTest extends TestCase
         $this->assertArrayHasKey('alister', $names);
     }
 
-    public function testCheckingAgainstReservedName()
+    public function testCheckingAgainstReservedName(): void
     {
         $this->assertTrue($this->rn->isReserved('alister'), 'alister was not reserved');
         $this->assertTrue($this->rn->isReserved('website'), 'website was not reserved');
@@ -48,7 +48,7 @@ class ReservedNamesDirectTest extends TestCase
         $this->assertFalse($this->rn->isReserved('notinthelist'), 'notinthelist was marked as reserved, but its not in the list!');
     }
 
-    public function testCheckingAgainstTest()
+    public function testCheckingAgainstTest(): void
     {
         $this->assertTrue($this->rn->isTest('test123123'));
         $this->assertTrue($this->rn->isTest('test'));
