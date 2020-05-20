@@ -11,3 +11,4 @@ composer.phar
 *~
 *.bak
 .phpunit.result.cache
+.php-version
