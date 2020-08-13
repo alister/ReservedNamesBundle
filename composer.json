@@ -18,7 +18,7 @@
         "phpunit/phpunit": "^9.1"
         ,"phpmd/phpmd": "^2.8"
         ,"roave/security-advisories": "dev-master"
-        ,"sebastian/phpcpd": "^5.0"
+        ,"sebastian/phpcpd": "^6.0"
         ,"sensiolabs/security-checker": "^6.0"
         ,"squizlabs/php_codesniffer": "^3.5"
         ,"symfony/yaml": "^4.4 || ^5.0"
